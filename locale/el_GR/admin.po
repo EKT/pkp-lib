@@ -186,6 +186,8 @@ msgid "admin.settings.siteStyleSheet"
 msgstr "Αρχείο γραφικής μορφοποίησης ιστοτόπου"
 
 msgid "admin.settings.siteLogo"
+msgstr "Site Logo"
+
 msgid "admin.settings.siteTitle"
 msgstr "Τίτλος ιστοτόπου"
 
@@ -298,6 +300,8 @@ msgid "admin.scheduledTask.publishSubmissions"
 msgstr "Δημοσίευση των προγραμματισμένων για δημοσίευση υποβολών"
 
 msgid "admin.settings.about"
+msgstr "Σχετικά με τον ιστότοπο"
+
 msgid "admin.settings.enableBulkEmails.label"
 msgstr "Μαζικά μηνύματα ηλεκτρονικού ταχυδρομείου"
 

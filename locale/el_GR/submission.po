@@ -1,4 +1,6 @@
-msgid """Project-Id-Version: \n"
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-19T10:49:44+00:00\n"
 "PO-Revision-Date: 2020-08-04 12:43+0000\n"
@@ -1153,6 +1155,8 @@ msgid "submission.documents"
 msgstr "Τεκμήρια Υποβολής"
 
 msgid "submission.description"
+msgstr "Περιγραφή"
+
 msgid "submission.overview"
 msgstr "Επισκόπηση Υποβολής"
 
@@ -1574,6 +1578,8 @@ msgid "submission.publisherId.enable"
 msgstr "Ενεργοποίηση για {$objects}"
 
 msgid "submission.publisherId"
+msgstr "Publisher ID"
+
 msgid "submission.identifiers"
 msgstr "Αναγνωριστικά"
 

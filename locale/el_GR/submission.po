@@ -1508,7 +1508,7 @@ msgid "submission.submit.metadataForm.tip"
 msgstr "Προσθέστε επιπλέον πληροφορίες για την υποβολή σας.  Πατήστε «enter» μετά από κάθε όρο."
 
 msgid "submission.submit.metadataForm"
-msgstr "Επιπλέον Βελτιώσεις"
+msgstr "Επιπλέον Δεδομένα."
 
 msgid "submission.submit.newFile"
 msgstr "Προσθήκη επιπλέον Αρχείου"
@@ -1633,7 +1633,7 @@ msgid "submission.copyedited"
 msgstr "Το κείμενο επιμελήθηκε"
 
 msgid "submission.contributors"
-msgstr "Κατάλογος συνεργατών"
+msgstr "Συντελεστές"
 
 msgid "submission.comments.addReviews"
 msgstr "Προσθέστε Κρίσεις στο Email"

@@ -1090,7 +1090,7 @@ msgid "locale.supported"
 msgstr "Συμπληρωματικές γλώσσες"
 
 msgid "navigation.access"
-msgstr "Χρήστες &amp; Ρόλοι"
+msgstr "Χρήστες & Ρόλοι"
 
 msgid "navigation.about"
 msgstr "Σχετικά"
@@ -1588,6 +1588,8 @@ msgid "validator.required_if"
 msgstr "Αυτό το πεδίο απαιτείται όταν το {$other} είναι {$value}."
 
 msgid "validator.required"
+msgstr "Αυτό το πεδίο είναι υποχρεωτικό."
+
 msgid "validator.regex"
 msgstr "Δεν έχει μορφοποιηθεί σωστά."
 
@@ -1658,6 +1660,8 @@ msgid "validator.image"
 msgstr "Πρέπει να είναι μια εικόνα."
 
 msgid "validator.filled"
+msgstr "Αυτό το πεδίο είναι υποχρεωτικό."
+
 msgid "validator.exists"
 msgstr "Το επιλεγμένο χαρακτηριστικό {$attribute} δεν είναι έγκυρο."
 
@@ -1706,7 +1710,8 @@ msgstr "Αυτή η ημερομηνία πρέπει να είναι πριν �
 msgid "validator.alpha_num"
 msgstr "Πρέπει να περιλαμβάνονται μόνο γράμματα και αριθμοί."
 
-msgid "validator.alpha_dash""Πρέπει να περιλαμβάνονται μόνο γράμματα, αριθμοί, παύλες και κάτω_παύλες."
+msgid "validator.alpha_dash"
+msgstr "Πρέπει να περιλαμβάνονται μόνο γράμματα, αριθμοί, παύλες και κάτω_παύλες."
 
 msgid "validator.alpha"
 msgstr "Πρέπει να περιλαμβάνονται μόνο γράμματα."
@@ -1848,8 +1853,8 @@ msgstr "Αυξήστε τη θέση του {$itemTitle}"
 msgid "common.override"
 msgstr "Παράκαμψη"
 
-msgid "common.noTemporaryFile""Δεν ήταν δυνατή η εύρεση του αρχείου που ανεβάσατε. Προσπαθήστε να το "
-"ανεβάσετε ξανά."
+msgid "common.noTemporaryFile"
+msgstr "Δεν ήταν δυνατή η εύρεση του αρχείου που ανεβάσατε. Προσπαθήστε να το ανεβάσετε ξανά."
 
 msgid "common.noItemsFound"
 msgstr "Δεν βρέθηκαν αντικείμενα."

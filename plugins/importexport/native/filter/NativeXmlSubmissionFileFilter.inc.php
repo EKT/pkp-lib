@@ -127,7 +127,7 @@ class NativeXmlSubmissionFileFilter extends NativeImportFilter {
 		if ($credit = $node->getAttribute('credit')) {
 			$submissionFile->setData('credit', $credit);
 		}
-		if ($directSalesPrice = $node->getAttribute('direct_sales_price')) {
+		if (strlen($directSalesPrice = $node->getAttribute('direct_sales_price'))) {
 			$submissionFile->setData('directSalesPrice', $directSalesPrice);
 		}
 		if ($genreId) {
@@ -302,6 +302,7 @@ class NativeXmlSubmissionFileFilter extends NativeImportFilter {
 			}
 		}
 
+		$newFileId = null;
 		if ($temporaryFilename) {
 			$fileSizeOnDisk = filesize($temporaryFilename);
 			$expectedFileSize = $node->getAttribute('filesize');
@@ -320,10 +321,7 @@ class NativeXmlSubmissionFileFilter extends NativeImportFilter {
 			$deployment->setFileDBId($node->getAttribute('id'), $newFileId);
 		}
 
-		if (isset($newFileId)) {
-			return $newFileId;
-		}
-		return null;
+		return $newFileId;
 	}
 
 	/**

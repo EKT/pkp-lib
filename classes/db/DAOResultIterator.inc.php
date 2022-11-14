@@ -36,6 +36,7 @@ class DAOResultIterator implements Iterator, Countable {
 	/**
 	 * @copydoc Iterator::current
 	 */
+	#[\ReturnTypeWillChange]
 	public function current() {
 		return $this->_current;
 	}
@@ -46,6 +47,7 @@ class DAOResultIterator implements Iterator, Countable {
 	 * getId() on the current element.
 	 * @return int|null
 	 */
+	#[\ReturnTypeWillChange]
 	public function key() {
 		if (!$this->_current) return null;
 		return $this->_i;
@@ -55,6 +57,7 @@ class DAOResultIterator implements Iterator, Countable {
 	/**
 	 * @copydoc Iterator::next()
 	 */
+	#[\ReturnTypeWillChange]
 	public function next() {
 		$this->_current = $this->_resultFactory->next();
 		$this->_i++;
@@ -65,6 +68,7 @@ class DAOResultIterator implements Iterator, Countable {
 	 * operation is not arbitrarily supported -- it can only be called
 	 * before the first call to `next()`.
 	 */
+	#[\ReturnTypeWillChange]
 	public function rewind() {
 		if ($this->_i != 0) throw new Exception('DAOResultIterator currently does not support rewind() once iteration has started.');
 	}
@@ -72,6 +76,7 @@ class DAOResultIterator implements Iterator, Countable {
 	/**
 	 * @copydoc Iterator::valid()
 	 */
+	#[\ReturnTypeWillChange]
 	public function valid() {
 		return ($this->_current !== null);
 	}
@@ -79,6 +84,7 @@ class DAOResultIterator implements Iterator, Countable {
 	/**
 	 * @copydoc Countable::count()
 	 */
+	#[\ReturnTypeWillChange]
 	public function count() {
 		return $this->_resultFactory->getCount();
 	}

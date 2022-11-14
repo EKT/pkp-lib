@@ -123,7 +123,7 @@ abstract class PKPApplication implements iPKPApplicationInfoProvider {
 	 */
 	public function __construct() {
 		// Seed random number generator
-		mt_srand(((double) microtime()) * 1000000);
+		mt_srand(intval(((double) microtime()) * 1000000));
 
 		import('lib.pkp.classes.core.Core');
 		import('lib.pkp.classes.core.PKPString');
@@ -767,7 +767,7 @@ abstract class PKPApplication implements iPKPApplicationInfoProvider {
 		if ($locale === null) $locale = AppLocale::getLocale();
 
 		foreach($licenseKeyMap as $pattern => $key) {
-			if (preg_match($pattern, $ccLicenseURL)) {
+			if (preg_match($pattern, $ccLicenseURL ?? '')) {
 				PKPLocale::requireComponents(LOCALE_COMPONENT_PKP_SUBMISSION, $locale);
 				return __($key, array(), $locale);
 			}

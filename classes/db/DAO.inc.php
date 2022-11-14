@@ -19,6 +19,8 @@
  * @brief Operations for retrieving and modifying objects from a database.
  */
 
+use function PHP81_BC\strftime;
+
 import('lib.pkp.classes.db.DAOResultFactory');
 import('lib.pkp.classes.db.DBResultRange');
 import('lib.pkp.classes.core.DataObject');
@@ -188,7 +190,7 @@ class DAO {
 	 */
 	function datetimeToDB($dt) {
 		if ($dt === null) return 'NULL';
-		if (!ctype_digit($dt)) $dt = strtotime($dt);
+		if (!ctype_digit((string) $dt)) $dt = strtotime($dt);
 		return '\'' . date('Y-m-d H:i:s', $dt) . '\'';
 	}
 

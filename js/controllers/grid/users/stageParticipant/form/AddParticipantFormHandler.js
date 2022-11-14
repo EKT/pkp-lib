@@ -33,10 +33,13 @@
 		$('select[name^=\'filterUserGroupId\']', $form).change(
 				this.callbackWrapper(this.addUserGroupId));
 
-		$('input[name=\'userId\']').click(function() {
-			var filterUserIdVal =
-					/** @type {string} */ ($('input[name=\'userId\']:checked').val());
-			$('input[name=\'userIdSelected\']').val(filterUserIdVal).trigger('change');
+		$form.parent().click(function(e) {
+			var $target = $(e.target), filterUserIdVal;
+			if ($target.is('input[name="userId"]')) {
+				filterUserIdVal = $('input[name=\'userId\']:checked').val();
+				$('input[name=\'userIdSelected\']').val(
+						filterUserIdVal).trigger('change');
+			}
 		});
 
 		// initially populate the input field.

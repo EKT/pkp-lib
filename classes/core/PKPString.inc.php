@@ -14,6 +14,7 @@
  *
  */
 
+use function PHP81_BC\strftime;
 
 /*
  * Perl-compatibile regular expression (PCRE) constants:
@@ -264,7 +265,7 @@ class PKPString {
 	 * @return int|boolean Returns number of full matches of given subject, or FALSE if an error occurred.
 	 */
 	static function regexp_match_all($pattern, $subject, &$matches) {
-		return preg_match_all($pattern . PCRE_UTF8, $subject, $matches);
+		return preg_match_all($pattern . PCRE_UTF8, $subject ?? '', $matches);
 	}
 
 	/**
@@ -276,7 +277,7 @@ class PKPString {
 	 * @return mixed
 	 */
 	static function regexp_replace($pattern, $replacement, $subject, $limit = -1) {
-		return preg_replace($pattern . PCRE_UTF8, $replacement, $subject, $limit);
+		return preg_replace($pattern . PCRE_UTF8, $replacement, $subject ?? '', $limit);
 	}
 
 	/**
@@ -299,7 +300,7 @@ class PKPString {
 	 * @return array Resulting string segments
 	 */
 	static function regexp_split($pattern, $subject, $limit = -1) {
-		return preg_split($pattern . PCRE_UTF8, $subject, $limit);
+		return preg_split($pattern . PCRE_UTF8, $subject ?? '', $limit);
 	}
 
 	/**

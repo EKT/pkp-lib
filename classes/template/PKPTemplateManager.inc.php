@@ -19,6 +19,8 @@
  * Currently integrated with Smarty (from http://smarty.php.net/).
  */
 
+use function PHP81_BC\strftime;
+
 /* This definition is required by Smarty */
 define('SMARTY_DIR', Core::getBaseDir() . '/lib/pkp/lib/vendor/smarty/smarty/libs/');
 
@@ -71,6 +73,9 @@ class PKPTemplateManager extends Smarty {
 
 	/** @var PKPRequest */
 	private $_request;
+
+	/** @var string[] */
+	private $_headers = [];
 
 	/**
 	 * Constructor.
@@ -1180,6 +1185,10 @@ class PKPTemplateManager extends Smarty {
 		header('Content-Type: text/html; charset=' . Config::getVar('i18n', 'client_charset'));
 		header('Cache-Control: ' . $this->_cacheability);
 
+		foreach ($this->_headers as $header) {
+			header($header);
+		}
+
 		// If no compile ID was assigned, get one.
 		if (!$compile_id) $compile_id = $this->getCompileId($template);
 
@@ -2059,8 +2068,8 @@ class PKPTemplateManager extends Smarty {
 		$this->assign([
 			'navigationMenu' => $navigationMenu,
 			'id' => $params['id'],
-			'ulClass' => $params['ulClass'] ?? null,
-			'liClass' => $params['liClass'] ?? null,
+			'ulClass' => $params['ulClass'] ?? '',
+			'liClass' => $params['liClass'] ?? '',
 		]);
 
 		return $this->fetch($menuTemplatePath);
@@ -2307,5 +2316,25 @@ class PKPTemplateManager extends Smarty {
 	public function register_function($name, $impl, $cacheable = true, $cache_attrs = null) {
 		if (Config::getVar('debug', 'deprecation_warnings')) trigger_error('Deprecated call to Smarty2 function ' .  __FUNCTION__);
 		$this->registerPlugin('function', $name, $impl, $cacheable, $cache_attrs);
+	}
+
+	/**
+	 * Defines the HTTP headers which will be appended to the output once the display() method gets called
+	 * @param string[] List of formatted headers (['header: content', ...])
+	 */
+	public function setHeaders(array $headers): self
+	{
+		$this->_headers = $headers;
+		return $this;
+	}
+
+	/**
+	 * Retrieves the headers
+	 *
+	 * @return string[]
+	 */
+	public function getHeaders(): array
+	{
+		return $this->_headers;
 	}
 }
